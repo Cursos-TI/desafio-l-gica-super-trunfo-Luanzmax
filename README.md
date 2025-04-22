@@ -37,6 +37,21 @@ No nível Aventureiro, você expandirá o sistema para incluir a comparação an
 - **Menu Interativo:** Uso de `switch` para criar um menu que permite ao jogador escolher os atributos a serem comparados.
 - **Exibição de Resultados:** O sistema exibirá o resultado da comparação, indicando qual carta venceu e qual atributo foi utilizado.
 
+### Como utilizar o programa:
+
+- Clique em executar o código, e cadastre as duas cartas
+- Pós o cadastro, aparecerá o menu para escolher um dos atributos para comparar as cartas
+- Pós isso, aparecerá o resultado, é simples.
+
+### Atributos disponíveis:
+
+1. População
+2. área do estado
+3. PIB
+4. Ponto Turísticos
+5. Densidade Populacional
+6. PIB Per Capita
+  
 ---
 
 ## 🏅 Nível Mestre
