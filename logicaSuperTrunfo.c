@@ -20,11 +20,12 @@ int main() {
     float PIB_per_capita1, PIB_per_capita2;
 
     //Definindo variáveis que irá armazenar os resultados
-    int escolhaJogador;
-    char atributoEscolhido[100];
-    char cartaVencedora[100];
-    char carta1[100];
-    char carta2[100];
+    char nomeAtributo1 [100], nomeAtributo2 [100];
+    int escolhaJogador1, escolhaJogador2;
+    int atributoEscolhido1, atributoEscolhido2;
+    char carta1_Atributo1 [100], carta2_Atributo1 [100];
+    char carta1_Atributo2 [100], carta2_Atributo2 [100];
+    
 
     
     // Cadastro das Cartas:
@@ -113,103 +114,132 @@ int main() {
     printf("4. Ponto Turísticos\n");
     printf("5. Densidade Populacional\n");
     printf("6. PIB Per Capita\n");
+
     printf("Sua Escolha: ");
-    scanf("%d", &escolhaJogador);
+    scanf("%d", &escolhaJogador1);
 
     printf("----------------------------\n");
 
 
     //Colocando a lógica toda no Switch e utilizando sprintf para armazenar os resultados com uma variável feita
     //pra armazenar e utilizar no bloco de resultados, separando a parte lógica da parte de saída de dados.
-    switch (escolhaJogador)
+    switch (escolhaJogador1)
     {
     case 1:
-        sprintf(atributoEscolhido, "Você escolheu: População!");
-        sprintf(carta1, "Carta 1 (%s): %lu", nome_cidade1, populacao1);
-        sprintf(carta2, "Carta 2 (%s): %lu", nome_cidade2, populacao2);
+        sprintf(nomeAtributo1, "Você escolheu: População!\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %lu\n", nome_cidade1, populacao1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %lu\n", nome_cidade2, populacao2);
 
-        if (populacao1 > populacao2) {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (populacao1 < populacao2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
-        break;
+        atributoEscolhido1 = populacao1 > populacao2 ? 1 : 0;
     case 2:
-        sprintf(atributoEscolhido, "Você escolheu: Área da cidade!");
-        sprintf(carta1, "Carta 1 (%s): %.2f km²", nome_cidade1, area_km1);
-        sprintf(carta2, "Carta 2 (%s): %.2f km²", nome_cidade2, area_km2);
+        sprintf(nomeAtributo1, "Você escolheu: Área do Estado!\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %.2f km²\n", nome_cidade1, area_km1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %.2f km²\n", nome_cidade2, area_km2);
 
-        if (area_km1 > area_km2)
-        {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (area_km1 < area_km2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
+        atributoEscolhido1 = area_km1 > area_km2 ? 1 : 0;
         break;
     case 3:
-        sprintf(atributoEscolhido, "Você escolheu: PIB!");
-        sprintf(carta1, "Carta 1 (%s): %.2f km²", nome_cidade1, PIB1);
-        sprintf(carta2, "Carta 2 (%s): %.2f km²", nome_cidade2, PIB2);
+        sprintf(nomeAtributo1, "Você escolheu: PIB!\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %.2f km²\n", nome_cidade1, PIB1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %.2f km²\n", nome_cidade2, PIB2);
 
-        if (PIB1 > PIB2)
-        {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (PIB1 < PIB2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
+        atributoEscolhido1 = PIB1 > PIB2 ? 1 : 0;
         break;
     case 4:
-        sprintf(atributoEscolhido, "Você escolheu: Pontos Turísticos!");
-        sprintf(carta1, "Carta 1 (%s): %d", nome_cidade1, ponto_turistico1);
-        sprintf(carta2, "Carta 2 (%s): %d", nome_cidade2, ponto_turistico2);
+        sprintf(nomeAtributo1, "Você escolheu: Pontos Turísticos!\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %d\n", nome_cidade1, ponto_turistico1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %d\n", nome_cidade2, ponto_turistico2);
 
-        if (ponto_turistico1 > ponto_turistico2)
-        {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (ponto_turistico1 < ponto_turistico2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
+        atributoEscolhido1 = ponto_turistico1 > ponto_turistico2 ? 1 : 0;
         break;
     case 5:
-        sprintf(atributoEscolhido, "Você escolheu: Densidade Populacional");
-        sprintf(carta1, "Carta 1 (%s): %.2f", nome_cidade1, densidade_populacional1);
-        sprintf(carta2, "Carta 2 (%s): %.2f", nome_cidade2, densidade_populacional2);
+        sprintf(nomeAtributo1, "Você escolheu: Densidade Populacional\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %.2f\n", nome_cidade1, densidade_populacional1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %.2f\n", nome_cidade2, densidade_populacional2);
 
-        if (densidade_populacional1 < densidade_populacional2)
-        {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (densidade_populacional1 > densidade_populacional2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
+        atributoEscolhido1 = densidade_populacional1 < densidade_populacional2 ? 1 : 0;
         break;
      case 6:
-        sprintf(atributoEscolhido, "Você escolheu: PIB per Capita");
-        sprintf(carta1, "Carta 1 (%s): %.2f", nome_cidade1,PIB_per_capita1);
-        sprintf(carta2, "Carta 2 (%s): %.2f", nome_cidade2, PIB_per_capita2);
+        sprintf(nomeAtributo1, "Você escolheu: PIB per Capita\n");
+        sprintf(carta1_Atributo1, "Carta 1 (%s): %.2f\n", nome_cidade1,PIB_per_capita1);
+        sprintf(carta2_Atributo1, "Carta 2 (%s): %.2f\n", nome_cidade2, PIB_per_capita2);
 
-        if (PIB_per_capita1 > PIB_per_capita2)
-        {
-            sprintf(cartaVencedora, "Carta 1: %s venceu!", nome_cidade1);
-        } else if (PIB_per_capita1 < PIB_per_capita2) {
-            sprintf(cartaVencedora, "Carta 2: %s venceu!", nome_cidade2);
-        } else {
-            sprintf(cartaVencedora, "Deu empate!");
-        }
+        atributoEscolhido1 = PIB_per_capita1 > PIB_per_capita2 ? 1 : 0;
         break;
     default:
-        sprintf(atributoEscolhido, "Opção inválida - Tente novamente!\n");
+        sprintf(nomeAtributo1, "Opção inválida - Tente novamente!\n");
         break;
     }
+
+    ////////Implementando um segundo menu para o segundoa tributo e ums egundo switch //////////
+
+    printf("------Escolha o segundo atributo que quer comparar-------\n");
+    printf("1. População\n");
+    printf("2. área do estado\n");
+    printf("3. PIB\n");
+    printf("4. Ponto Turísticos\n");
+    printf("5. Densidade Populacional\n");
+    printf("6. PIB Per Capita\n");
+
+    printf("Sua Escolha: ");
+    scanf("%d", &escolhaJogador2);
+
+    printf("----------------------------\n");
+
+    if (escolhaJogador1 == escolhaJogador2) 
+    {
+        printf("Você escolheu o mesmo atributo!");
+    } else {
+        switch (escolhaJogador2)
+        {
+        case 1:
+            sprintf(nomeAtributo2, "Você escolheu: População!\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %lu\n", nome_cidade1, populacao1);
+             sprintf(carta2_Atributo2, "Carta 2 (%s): %lu\n", nome_cidade2, populacao2);
+
+            atributoEscolhido2 = populacao1 > populacao2 ? 1 : 0;
+        case 2:
+            sprintf(nomeAtributo2, "Você escolheu: Área do Estado!\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %.2f km²\n", nome_cidade1, area_km1);
+            sprintf(carta2_Atributo2, "Carta 2 (%s): %.2f km²\n", nome_cidade2, area_km2);
+
+            atributoEscolhido2 = area_km1 > area_km2 ? 1 : 0;
+            break;
+        case 3:
+            sprintf(nomeAtributo2, "Você escolheu: PIB!\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %.2f km²\n", nome_cidade1, PIB1);
+            sprintf(carta2_Atributo2, "Carta 2 (%s): %.2f km²\n", nome_cidade2, PIB2);
+
+            atributoEscolhido2 = PIB1 > PIB2 ? 1 : 0;
+            break;
+        case 4:
+            sprintf(nomeAtributo2, "Você escolheu: Pontos Turísticos!\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %d\n", nome_cidade1, ponto_turistico1);
+            sprintf(carta2_Atributo2, "Carta 2 (%s): %d\n", nome_cidade2, ponto_turistico2);
+
+            atributoEscolhido2 = ponto_turistico1 > ponto_turistico2 ? 1 : 0;
+            break;
+        case 5:
+            sprintf(nomeAtributo2, "Você escolheu: Densidade Populacional\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %.2f\n", nome_cidade1, densidade_populacional1);
+            sprintf(carta2_Atributo2, "Carta 2 (%s): %.2f\n", nome_cidade2, densidade_populacional2);
+
+            atributoEscolhido2 = densidade_populacional1 < densidade_populacional2 ? 1 : 0;
+            break;
+        case 6:
+            sprintf(nomeAtributo2, "Você escolheu: PIB per Capita\n");
+            sprintf(carta1_Atributo2, "Carta 1 (%s): %.2f\n", nome_cidade1,PIB_per_capita1);
+            sprintf(carta2_Atributo2, "Carta 2 (%s): %.2f\n", nome_cidade2, PIB_per_capita2);
+
+            atributoEscolhido2 = PIB_per_capita1 > PIB_per_capita2 ? 1 : 0;
+            break;
+        default:
+            sprintf(nomeAtributo2, "Opção inválida - Tente novamente!\n");
+            break;
+        }
+    }
+
+
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
@@ -220,10 +250,24 @@ int main() {
 
     //Exibindo os reusltado
 
-    printf("%s\n", atributoEscolhido);
-    printf("%s\n", carta1);
-    printf("%s\n", carta2);
-    printf("%s\n", cartaVencedora);
+    printf("%s", nomeAtributo1);
+    printf("%s", carta1_Atributo1);
+    printf("%s", carta2_Atributo1);
+
+    printf("--------------------------\n");
+
+    printf("%s", nomeAtributo2);
+    printf("%s", carta1_Atributo2);
+    printf("%s", carta2_Atributo2);
+
+    if (atributoEscolhido1 && atributoEscolhido2)
+    {
+        printf("Parabéns, você venceu!\n");
+    } else if (atributoEscolhido1 != atributoEscolhido2) {
+        printf("Empate!\n");
+    } else {
+        printf("Infelizmente, você perdeu!\n");
+    }
 
     return 0;
 }
